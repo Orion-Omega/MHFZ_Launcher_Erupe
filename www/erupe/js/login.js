@@ -21,7 +21,7 @@ function checkAuthResult() {
     } else if (loginResult == "AUTH_SUCCESS") {
 		saveAccount();
 		createGoodAlert("Connected.");
-		createNormalAlert("After selected a character, press to [Start] button.");
+		createNormalAlert("After selecting a character, press [Start] button.");
         window.location.href = 'charsel.html'
     } else {
 		elementID.style.display = "none";
