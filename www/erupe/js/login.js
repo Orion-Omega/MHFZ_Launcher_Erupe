@@ -48,7 +48,6 @@ function saveAccount() {
 function showKeyCode(e) {
         var audio = new Audio("./audio/sys_cursor.mp3");
         audio.play();
-		alert("TEST");
 }
 
 $(function() {

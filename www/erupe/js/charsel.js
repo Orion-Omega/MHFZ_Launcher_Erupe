@@ -34,6 +34,7 @@ function createCharListItem(name, uid, weapon, HR, GR, lastLogin, sex) {
 	if (GR > 999){
 		GR = "999";
 	}
+
 	if (weapon == "片手剣"){
 		weapon = "Sword & Shield";
 		icon = "./ressources/icons/SS.png";
@@ -167,78 +168,10 @@ $(function () {
 $(function() {
     var selectedUid = $(".char-list-entry.active").attr("uid");
 	$("#bt_new_char").on("click", function(e) {
-		if ('addCharactersForUser' in window.external){
-			alert("WORK");
-		}
-		if ('createCharactersForUser' in window.external){
-			alert("WORK");
-		}
-		if ('signCharactersForUser' in window.external){
-			alert("WORK");
-		}
-		if ('addcharacterforUser' in window.external){
-			alert("WORK");
-		}
-		if ('addCharacterforuser' in window.external){
-			alert("WORK");
-		}
-		if ('newChar' in window.external){
-			alert("WORK");
-		}
-		if ('addnewChar' in window.external){
-			alert("WORK");
-		}
-		if ('buyCharacter' in window.external){
-			alert("WORK");
-		}
-		if ('buyNewCharacter' in window.external){
-			alert("WORK");
-		}
-		if ('adsCharacter' in window.external){
-			alert("WORK");
-		}
-		if ('addChar' in window.external){
-			alert("WORK");
-		}
-		if ('newChar' in window.external){
-			alert("WORK");
-		}
-		if ('buyChar' in window.external){
-			alert("WORK");
-		}
-		if ('createChar' in window.external){
-			alert("WORK");
-		}
-		if ('insertCharacter' in window.external){
-			alert("WORK");
-		}
-		if ('insertnewCharacter' in window.external){
-			alert("WORK");
-		}
-		if ('insertaddCharacter' in window.external){
-			alert("WORK");
-		}
-		if ('signCharacter' in window.external){
-			alert("WORK");
-		}
-		if ('signnewCharacter' in window.external){
-			alert("WORK");
-		}
-		if ('signChar' in window.external){
-			alert("WORK");
-		}
-		if ('signUid' in window.external){
-			alert("WORK");
-		}
-		if ('CreateUid' in window.external){
-			alert("WORK");
-		}
-		if ('signCharacter' in window.external){
-			alert("WORK");
-		}
+		alert("NOT WORK");
 	});
 	$("#bt_delete_char").on("click", function(e) {
-		window.external.deleteCharacter(selectedUid)
+		alert("NOT WORK");
 	});
 });
 
@@ -266,4 +199,32 @@ $("#bt_confirm").on("click", function () {
     }, 3000);
   });
 });
+
+// Enable to read JP text
+function isKanji(ch) {
+    return (ch >= "\u4e00" && ch <= "\u9faf") ||
+	(ch >= "\u3400" && ch <= "\u4dbf");
+}
+
+function accumulativeParser(str, condition) {
+    let accumulations = [];
+    let accumulator = "";
+
+    for (let i = 0; i < str.length; ++i) {
+        let ch = str[i];
+
+        if (condition(x)) {
+            accumulator += ch;
+        } else if (accumulator !== "") {
+            accumulations.push(accumulator);
+            accumulator = "";
+        }
+    }
+    return accumulations;
+}
+
+function parseKanjiCompounds(str) {
+    return accumulativeParser(str, isKanji);
+}
+
 
