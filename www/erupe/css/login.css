@@ -129,7 +129,7 @@ input, select, textarea{
 }
 
 #submitButton{
-  background: url("../ressources/BT_Launch.png") no-repeat scroll 0 0 transparent;
+  background: url("../ressources/bt_Launch.png") no-repeat scroll 0 0 transparent;
   color: rgba(255,255,255,1);
   cursor: pointer;
   font-weight: bold;
@@ -141,7 +141,7 @@ input, select, textarea{
 }
 
 #submitButton:hover{
-  background: url("../ressources/BT_Launch_Hover.png") no-repeat scroll 0 0 transparent;
+  background: url("../ressources/bt_Launch_Hover.png") no-repeat scroll 0 0 transparent;
   color: rgba(255,255,255,1);
   cursor: pointer;
   font-weight: bold;
